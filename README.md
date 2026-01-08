@@ -34,7 +34,7 @@ InfoNCE loss (CLIP-style):
 
 $$
 \text{Logits} = e^{\tau} \cdot \left(Z_{\text{cmd}} Z_{\text{cur}}^{\top}\right), \qquad
-\mathcal{L} = \frac{\operatorname{CE}(\text{Logits}, I) + \operatorname{CE}\left(\text{Logits}^{\top}, I\right)}{2}
+\mathcal{L} = \frac{\text{CE}(\text{Logits}, I) + \text{CE}\left(\text{Logits}^{\top}, I\right)}{2}
 $$
 
 Where:
@@ -61,4 +61,3 @@ python src/eval.py
 ## Key Insight
 
 By training only on healthy operations, the model learns the expected relationship between commands and currents. Anomalies (dull tools) manifest as reduced cosine similarity in the latent space, enabling detection without anomaly labels during training.
-# factorynet
